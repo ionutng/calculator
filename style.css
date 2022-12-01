@@ -30,13 +30,15 @@ header, footer {
 .result {
     border: 2px solid grey;
     border-radius: 8px;
-    display: flex;
     margin: 25px;
     height: 100px;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 32px;
     padding: 8px;
+    gap: 8px;
 }
 
 .buttons {
@@ -52,6 +54,10 @@ button {
     width: 125px;
 }
 
-.eraseBtn {
+.clear, .delete {
     width: 250px;
+}
+
+.previousNumber {
+    font-size: 22px;
 }
