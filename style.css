@@ -23,7 +23,6 @@ header, footer {
     border: 2px solid black;
     border-radius: 12px;
     width: 600px;
-    height: 700px;
     display: flex;
     flex-direction: column;
 }
@@ -53,6 +52,6 @@ button {
     width: 125px;
 }
 
-#eraseBtn {
+.eraseBtn {
     width: 250px;
 }

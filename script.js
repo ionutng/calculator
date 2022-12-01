@@ -1,3 +1,5 @@
+let operand = null;
+
 function add(a,b) {
     return a+b;
 }
@@ -25,3 +27,20 @@ function operate(operator, firstNumber, secondNumber) {
         return divide(firstNumber,secondNumber);
     }
 }
+
+function populateDisplay() {
+    const digitBtns = document.querySelectorAll('.digit');
+    const resultDiv = document.querySelector('.result');
+    const resultPara = document.createElement('p');
+    digitBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            resultPara.textContent = button.value;
+            operand = resultPara.textContent;
+        });
+    });
+    resultDiv.appendChild(resultPara);
+}
+
+populateDisplay();
+
+
