@@ -3,6 +3,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Comic Sans MS', Verdana, Georgia, sans-serif;
 }
 
 header, footer {
@@ -22,7 +23,7 @@ header, footer {
 .calculator {
     border: 2px solid black;
     border-radius: 12px;
-    width: 600px;
+    width: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -51,11 +52,14 @@ header, footer {
 }
 
 button {
-    width: 125px;
+    width: 100px;
+    font-family: 'Comic Sans MS', Verdana, Georgia, sans-serif;
+    border-radius: 8px;
+    border: 1px solid black;
 }
 
 .clear, .delete {
-    width: 250px;
+    width: 200px;
 }
 
 .previousNumber {

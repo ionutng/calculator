@@ -55,6 +55,9 @@ button.addEventListener('click', (btn) => {
 
 operatorBtns.forEach(button => {
 button.addEventListener('click', (op) => {
+    if (currentNumber !== "" && previousNumber !== "") {
+        operate();
+    }
     operator = op.target.textContent;
     previousNumber = currentNumber;
     previousNumberDiv.textContent = previousNumber + operator;
