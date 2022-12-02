@@ -41,7 +41,9 @@ function operate() {
     } else if (operator === "/") {
         currentNumberDiv.textContent = divide(previousNumber,currentNumber);
     }
+    previousNumber = "";
     currentNumber = currentNumberDiv.textContent;
+    console.log(`prev: ${previousNumber}, curr: ${currentNumber}, op: ${operator}`);
 }
 
 digitBtns.forEach(button => {
