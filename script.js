@@ -1,4 +1,3 @@
-
 let previousNumber = "",
 currentNumber = "",
 operator = "";
@@ -13,15 +12,15 @@ const deleteBtn = document.querySelector('.delete');
 const equalBtn = document.querySelector('.equal');
 
 function add(a,b) {
-return a+b;
+    return a+b;
 }
 
 function subtract(a,b) {
-return a-b;
+    return a-b;
 }
 
 function multiply(a,b) {
-return a*b;
+    return a*b;
 }
 
 function divide(a,b) {
@@ -40,6 +39,9 @@ function operate() {
         currentNumberDiv.textContent = multiply(previousNumber,currentNumber);
     } else if (operator === "/") {
         currentNumberDiv.textContent = divide(previousNumber,currentNumber);
+    }
+    if (currentNumberDiv.textContent.includes("NaN") || currentNumberDiv.textContent.includes("Infinity")) {
+        currentNumberDiv.textContent = "Error!"
     }
     previousNumber = "";
     currentNumber = currentNumberDiv.textContent;
