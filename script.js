@@ -20,11 +20,11 @@ function subtract(a,b) {
 }
 
 function multiply(a,b) {
-    return a*b;
+    return Number(a*b).toFixed(5);
 }
 
 function divide(a,b) {
-    return Number((a/b).toFixed(9));
+    return Number((a/b).toFixed(5));
 }
 
 function operate() {
@@ -43,13 +43,16 @@ function operate() {
     if (currentNumberDiv.textContent.includes("NaN") || currentNumberDiv.textContent.includes("Infinity")) {
         currentNumberDiv.textContent = "Error!"
     }
+    if (currentNumberDiv.textContent.length > 12) {
+        currentNumberDiv.textContent = currentNumberDiv.textContent + "...";
+    }
     previousNumber = "";
     currentNumber = currentNumberDiv.textContent;
 }
 
 digitBtns.forEach(button => {
 button.addEventListener('click', (btn) => {
-    if (currentNumber.length <= 12) {
+    if (currentNumber.length <= 11) {
         currentNumber += btn.target.textContent;
         currentNumberDiv.textContent = currentNumber;
     }
