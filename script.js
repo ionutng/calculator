@@ -43,7 +43,6 @@ function operate() {
     }
     previousNumber = "";
     currentNumber = currentNumberDiv.textContent;
-    console.log(`prev: ${previousNumber}, curr: ${currentNumber}, op: ${operator}`);
 }
 
 digitBtns.forEach(button => {
@@ -52,11 +51,17 @@ button.addEventListener('click', (btn) => {
         currentNumber += btn.target.textContent;
         currentNumberDiv.textContent = currentNumber;
     }
+    if (button.className === "digit period") {
+        if (currentNumber.includes(".")) {
+            document.querySelector('.period').disabled = true;
+        }
+    }
 });
 });
 
 operatorBtns.forEach(button => {
 button.addEventListener('click', (op) => {
+    document.querySelector('.period').disabled = false;
     if (currentNumber !== "" && previousNumber !== "") {
         operate();
     }
@@ -68,7 +73,12 @@ button.addEventListener('click', (op) => {
 });
 });
 
-equalBtn.addEventListener('click', operate);
+equalBtn.addEventListener('click', () => {
+    operate();
+    if (!currentNumber.includes(".")) {
+        document.querySelector('.period').disabled = false;
+    }
+});
 
 clearBtn.addEventListener('click', clearCalculator);
 
@@ -78,6 +88,7 @@ function clearCalculator() {
     previousNumber = "";
     currentNumber = "";
     operator = "";
+    document.querySelector('.period').disabled = false;
 }
 
 deleteBtn.addEventListener('click', deleteDigit);
